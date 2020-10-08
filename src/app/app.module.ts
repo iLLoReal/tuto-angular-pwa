@@ -5,17 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
+import {NewsletterService} from '../app/newsletter.service'
+import { HttpClientModule }    from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    BrowserModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [NewsletterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
