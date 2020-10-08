@@ -16,7 +16,9 @@ export class AppComponent {​​​​​
       this.swPush.requestSubscription({​​​​​
         serverPublicKey: this.VAPID_PUBLIC_KEY
       }​​​​​)
-      .then(sub => this.ns.addPushSubscriber(sub))
+      .then(sub => this.ns.addPushSubscriber(sub).subscribe( res => {
+        console.log(res);
+      }))
       .catch(err => console.error("Could not subscribe to notifications", err));
     }​​​​​
   }​​​​​
