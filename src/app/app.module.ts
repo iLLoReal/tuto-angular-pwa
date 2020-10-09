@@ -15,7 +15,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({ appId: 'serverApp' }).withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
