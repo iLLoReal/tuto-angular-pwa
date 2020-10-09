@@ -315,10 +315,9 @@
     </a>
 </div>
 
-<div style="height: 300px;"
-  leaflet 
-  [leafletOptions]="options">
-</div>
+<h3>CreativeNerd SSR MAP</h3>
+<div id="map" style="width:500px;height:500px"></div>
+<router-outlet></router-outlet>
 
 <div class="content" role="main">
   <button class="button button-primary" (click)="subscribeToNotifications()">
