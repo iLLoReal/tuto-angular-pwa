@@ -7,6 +7,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {NewsletterService} from '../app/newsletter.service'
 import { HttpClientModule }    from '@angular/common/http';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,6 +19,7 @@ import { HttpClientModule }    from '@angular/common/http';
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
+    LeafletModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [NewsletterService],
